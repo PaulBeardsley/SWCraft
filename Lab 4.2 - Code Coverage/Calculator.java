@@ -7,10 +7,11 @@ public class Calculator {
 	public int divide(String n1) {
 		int result = -9999;		
 		String separator = ",";
+		String delimiters = "\\s+|,\\s*|\\.\\s*";
 		// if doesn't contain a comma call this
 		if(!n1.contains(","))
 			separator = String.format("%s", Utils.validSeperator(n1));    // slows down test
-		String[] numbers = n1.split(separator);
+		String[] numbers = n1.split(delimiters);
 		for(String number : numbers) {
 			if(!Utils.isNumeric(number)) {  
 				return result;
